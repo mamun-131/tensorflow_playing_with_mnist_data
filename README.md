@@ -1,2 +1,3 @@
-# tensorflow_playing_with_mnist_data
+# MNIST DATASET - TENSOWFLOW - KERAS - SEQUENTIAL MODEL, MULTIPLE DENSE LAYERS
+## I have played  
  

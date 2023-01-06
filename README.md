@@ -18,23 +18,23 @@ is simple. It has just Flatten Layer, 2 Dense Layers and Output Layers.
 At the starting part of the coding we need to call the libraries.
 
 Code:
-
+```
 import tensorflow as tf
 from tensorflow import keras
 import matplotlib.pyplot as plt
 import numpy as np
-
+```
 ## Get, split and shape the Data
 Following code doenload MNIST dataset and split training and testing data
 
 Code:
-
+```
 mydata = tf.keras.datasets.mnist
 
 (x_train, y_train), (x_test,y_test) = mydata.load_data()
 print (x_train.shape)
 x_train, x_test = x_train/255, x_test/255
-
+```
 ## Model Types
 You can cretae model by two ways.
 - **Sequential Way** - Sequential Model.
@@ -44,7 +44,7 @@ You can cretae model by two ways.
 Sequential Model Code should be like below. I have created a separate file for Sequential Model (tf_mnist_sequential_model.py).
 
 Code:
-
+```
 --- Create a sequential model
 model = tf.keras.models.Sequential([
     tf.keras.layers.Flatten(input_shape=(28,28)),
@@ -53,12 +53,12 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dropout(0.2),
     tf.keras.layers.Dense(10, activation='softmax')    
     ]) 
-
+```
 ## Functional Model
 Functional Model Code should be like below. I have created a separate file for Functional Model (tf_mnist_functional_model.py).
 
 Code:
-
+```
 --- Create a Functional model
 --- Functional model has 3 parts. Input, Layers and Model
 
@@ -75,4 +75,4 @@ output_layer = tf.keras.layers.Dense(10, activation=tf.nn.softmax)(dense_layer2)
 functional_model = tf.keras.models.Model(inputs=input_layer, outputs=output_layer)
 
 functional_model.summary()
-
+```
